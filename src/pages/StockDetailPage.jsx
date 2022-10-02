@@ -3,11 +3,13 @@ import { useEffect, useState } from "react";
 import finnHub from "../apis/finnHub";
 import { StockChart } from "../components/StockChart";
 import { StockData } from "../components/StockData";
+import { useNavigate } from "react-router-dom";
 
 export const StockDetailPage = () => {
 
     const {symbol} = useParams();
     const [chartData, setChartData] = useState();
+    const navigate = useNavigate();
 
     function formatData(data){
         return data.t.map((element, index) =>{
@@ -81,10 +83,15 @@ export const StockDetailPage = () => {
 
     return (
         <div>
+            <button 
+                type="button"
+                className="btn btn-primary rounded mt-4"
+                onClick={() => navigate("/")}
+            >Return Home</button>
             {chartData && (
                 <div>
-                    <StockChart chartData={chartData} symbol={symbol} />
                     <StockData symbol={symbol}/>
+                    <StockChart chartData={chartData} symbol={symbol} />
                 </div>
             )}
         </div>

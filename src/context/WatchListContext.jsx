@@ -7,9 +7,8 @@ const WatchListContextProvider = (props) => {
     const [watchList, setWatchList] = useState(
         localStorage.getItem("watchList") ? 
             JSON.parse(localStorage.getItem("watchList"))
-            : ["GOOGL", "MSFT", "AMZN"]
+            : ["DAL", "MSFT", "TOYOF"]
     );
-    console.log(watchList);
 
     useEffect(() => {
         localStorage.setItem("watchList", JSON.stringify(watchList))

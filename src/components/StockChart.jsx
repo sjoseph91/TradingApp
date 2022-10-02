@@ -40,7 +40,7 @@ export const StockChart = ({chartData, symbol}) => {
                 return day;
             case "7d":
                 return week;
-            case "1y":
+            case "1Y":
                 return year;
             default:
                 return day;
@@ -63,17 +63,18 @@ export const StockChart = ({chartData, symbol}) => {
         <div 
             className="mt-5 p-4 shadow-sm bg-white"
         >
+            <div>
+                <button className={renderButtonSelect("24h")}onClick={() => setDateFormat("24h")}>24h</button>
+                <button className={renderButtonSelect("7d")} onClick={() => setDateFormat("7d")}>7d</button>
+                <button className={renderButtonSelect("1Y")} onClick={() => setDateFormat("1Y")}>1y</button>
+            </div>
             <Chart 
                 options={options} 
                 series={series} 
                 type="area" 
                 width="100%"
             />
-            <div>
-                <button className={renderButtonSelect("24h")}onClick={() => setDateFormat("24h")}>24h</button>
-                <button className={renderButtonSelect("7d")} onClick={() => setDateFormat("7d")}>7d</button>
-                <button className={renderButtonSelect("1Y")} onClick={() => setDateFormat("1Y")}>1y</button>
-            </div>
+            
         </div>
     )
 }

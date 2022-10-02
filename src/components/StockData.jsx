@@ -3,10 +3,11 @@ import finnHub from '../apis/finnHub'
 
 export const StockData = ({symbol}) => {
 
-    let isMounted = true;
+    let isMounted;
     const [stockData, setStockData] = useState();
 
     useEffect(() => {
+        isMounted = true;
         const fetchData = async () => {
             try{
                 const response = await finnHub.get("/stock/profile2", {
@@ -14,7 +15,6 @@ export const StockData = ({symbol}) => {
                         symbol
                     }
                 })
-                console.log(response);
 
                 if (isMounted){
                     setStockData(response.data);

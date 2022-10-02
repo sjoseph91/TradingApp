@@ -62,7 +62,7 @@ export const StockList = () => {
     }, [watchList])
 
     return (
-        <table className="table table-hover mt-5">
+        <table className="table table-hover mt-5  mx-auto" >
             <thead style={{color: "rgb(79, 89, 102)"}}>
                 <tr>
                     <th scope="col">Name</th>
