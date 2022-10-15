@@ -82,6 +82,7 @@ export const StockList = () => {
                         <tr 
                             onClick={() => handleStockSelect(stockData.symbol)}className="table-row" 
                             key={stockData.symbol}
+                            title="Click for historical data"
                             style={{cursor: "pointer"}}
                         >
                             <th scope="row">{stockData.symbol}</th>

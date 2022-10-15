@@ -90,8 +90,8 @@ export const StockDetailPage = () => {
             >Return Home</button>
             {chartData && (
                 <div>
-                    <StockData symbol={symbol}/>
                     <StockChart chartData={chartData} symbol={symbol} />
+                    <StockData symbol={symbol}/>
                 </div>
             )}
         </div>

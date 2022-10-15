@@ -11,3 +11,8 @@ body{
     position: relative;
     left: 10px;
 }
+
+.table-row:hover{
+    background-color: rgb(204, 204, 204) !important;
+}
+

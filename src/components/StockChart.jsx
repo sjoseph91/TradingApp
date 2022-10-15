@@ -72,7 +72,8 @@ export const StockChart = ({chartData, symbol}) => {
                 options={options} 
                 series={series} 
                 type="area" 
-                width="100%"
+                width="90%"
+                
             />
             
         </div>
